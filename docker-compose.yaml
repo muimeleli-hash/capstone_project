@@ -1,0 +1,43 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: customer360_postgres
+    restart: always
+    environment:
+      POSTGRES_DB: customer360_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 4462
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  airflow:
+    image: apache/airflow:2.9.0-python3.10
+    container_name: customer360_airflow
+    restart: always
+    depends_on:
+      - postgres
+    environment:
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'False'
+      AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'False'
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://postgres:4462@postgres:5432/customer360_db
+      DB_HOST: postgres
+      DB_PORT: '5432'
+      DB_NAME: customer360_db
+      DB_USER: postgres
+      DB_PASSWORD: '4462'
+      AIRFLOW__CORE__FERNET_KEY: 'JkV5yjxD7n6M17mU4AqR19z7x8u3lVJ4Z0Tb4B2dP4A='
+    volumes:
+      - .:/opt/airflow
+    ports:
+      - "8081:8080"
+    command: >
+      bash -c "pip install --no-cache-dir -r /opt/airflow/requirements.txt &&
+               airflow db migrate &&
+               airflow users create --username admin --password admin --firstname Admin --lastname User --role Admin --email admin@example.com || true &&
+               airflow standalone"
+
+volumes:
+  postgres_data:

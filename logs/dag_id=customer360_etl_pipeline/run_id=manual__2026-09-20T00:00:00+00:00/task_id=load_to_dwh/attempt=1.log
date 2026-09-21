@@ -1,0 +1,46 @@
+[2026-09-21T15:28:39.898+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-09-21T15:28:39.940+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: customer360_etl_pipeline.load_to_dwh manual__2026-09-20T00:00:00+00:00 [queued]>
+[2026-09-21T15:28:39.951+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: customer360_etl_pipeline.load_to_dwh manual__2026-09-20T00:00:00+00:00 [queued]>
+[2026-09-21T15:28:39.951+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2026-09-21T15:28:39.968+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): load_to_dwh> on 2026-09-20 00:00:00+00:00
+[2026-09-21T15:28:39.976+0000] {standard_task_runner.py:63} INFO - Started process 609 to run task
+[2026-09-21T15:28:39.981+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'customer360_etl_pipeline', 'load_to_dwh', 'manual__2026-09-20T00:00:00+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/customer360_dag.py', '--cfg-path', '/tmp/tmp9x6dqe3t']
+[2026-09-21T15:28:39.986+0000] {standard_task_runner.py:91} INFO - Job 10: Subtask load_to_dwh
+[2026-09-21T15:28:40.064+0000] {task_command.py:426} INFO - Running <TaskInstance: customer360_etl_pipeline.load_to_dwh manual__2026-09-20T00:00:00+00:00 [running]> on host 186ccd638a63
+[2026-09-21T15:28:40.194+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='customer360_etl_pipeline' AIRFLOW_CTX_TASK_ID='load_to_dwh' AIRFLOW_CTX_EXECUTION_DATE='2026-09-20T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-20T00:00:00+00:00'
+[2026-09-21T15:28:40.195+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-09-21T15:28:40.269+0000] {postgresql.py:316} INFO - 
+[2026-09-21T15:28:40.269+0000] {postgresql.py:317} INFO - ============================================================
+[2026-09-21T15:28:40.269+0000] {postgresql.py:318} INFO - STEP 4 - SILVER: CREATE / LOAD ALL STAGING DIMENSIONS
+[2026-09-21T15:28:40.269+0000] {postgresql.py:319} INFO - ============================================================
+[2026-09-21T15:28:43.038+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-09-21T15:28:43.039+0000] {taskinstance.py:2890} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/customer360_dag.py", line 72, in task_load_to_dwh
+    etl.load_silver_dimensions(df_clean)
+  File "/opt/airflow/postgresql.py", line 337, in load_silver_dimensions
+    cur.execute(f"TRUNCATE TABLE {table} RESTART IDENTITY CASCADE;")
+psycopg2.errors.DeadlockDetected: deadlock detected
+DETAIL:  Process 1832 waits for AccessExclusiveLock on relation 17313 of database 16384; blocked by process 1802.
+Process 1802 waits for AccessShareLock on relation 17281 of database 16384; blocked by process 1832.
+HINT:  See server log for query details.
+
+[2026-09-21T15:28:43.056+0000] {taskinstance.py:1205} INFO - Marking task as UP_FOR_RETRY. dag_id=customer360_etl_pipeline, task_id=load_to_dwh, execution_date=20260920T000000, start_date=20260921T152839, end_date=20260921T152843
+[2026-09-21T15:28:43.082+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 10 for task load_to_dwh (deadlock detected
+DETAIL:  Process 1832 waits for AccessExclusiveLock on relation 17313 of database 16384; blocked by process 1802.
+Process 1802 waits for AccessShareLock on relation 17281 of database 16384; blocked by process 1832.
+HINT:  See server log for query details.
+; 609)
+[2026-09-21T15:28:43.101+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2026-09-21T15:28:43.126+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-09-21T15:28:43.131+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

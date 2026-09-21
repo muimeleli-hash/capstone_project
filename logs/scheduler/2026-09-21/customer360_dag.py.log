@@ -1,0 +1,273 @@
+[2026-09-21T15:22:07.409+0000] {processor.py:161} INFO - Started process (PID=237) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:22:07.411+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:22:07.416+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:22:07.415+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:22:07.782+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:22:07.818+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:22:07.817+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:22:07.854+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:22:07.854+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:22:07.948+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.548 seconds
+[2026-09-21T15:22:38.149+0000] {processor.py:161} INFO - Started process (PID=301) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:22:38.150+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:22:38.152+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:22:38.152+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:22:38.328+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:22:38.341+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:22:38.340+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:22:38.356+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:22:38.356+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:22:38.364+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.223 seconds
+[2026-09-21T15:23:08.621+0000] {processor.py:161} INFO - Started process (PID=307) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:23:08.623+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:23:08.628+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:23:08.627+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:23:08.886+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:23:08.973+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:23:08.973+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:23:09.005+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:23:09.004+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:23:09.025+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.423 seconds
+[2026-09-21T15:23:39.369+0000] {processor.py:161} INFO - Started process (PID=329) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:23:39.372+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:23:39.374+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:23:39.374+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:23:39.651+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:23:39.700+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:23:39.699+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:23:39.726+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:23:39.726+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:23:39.741+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.389 seconds
+[2026-09-21T15:24:10.153+0000] {processor.py:161} INFO - Started process (PID=335) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:24:10.155+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:24:10.158+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:24:10.158+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:24:10.379+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:24:10.406+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:24:10.406+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:24:10.426+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:24:10.426+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:24:10.437+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.301 seconds
+[2026-09-21T15:24:21.591+0000] {processor.py:161} INFO - Started process (PID=341) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:24:21.595+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:24:21.605+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:24:21.604+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:24:22.133+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:24:22.173+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:24:22.173+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:24:22.194+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:24:22.194+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:24:22.215+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.649 seconds
+[2026-09-21T15:24:29.330+0000] {processor.py:161} INFO - Started process (PID=362) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:24:29.332+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:24:29.334+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:24:29.333+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:24:29.541+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:24:29.575+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:24:29.575+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:24:29.595+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:24:29.594+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:24:29.609+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.286 seconds
+[2026-09-21T15:24:59.733+0000] {processor.py:161} INFO - Started process (PID=370) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:24:59.740+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:24:59.743+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:24:59.743+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:25:00.144+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:25:00.193+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:25:00.192+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:25:00.222+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:25:00.221+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:25:00.232+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.520 seconds
+[2026-09-21T15:25:30.507+0000] {processor.py:161} INFO - Started process (PID=376) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:25:30.510+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:25:30.514+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:25:30.513+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:25:30.739+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:25:30.772+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:25:30.771+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:25:30.791+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:25:30.791+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:25:30.802+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.309 seconds
+[2026-09-21T15:26:01.092+0000] {processor.py:161} INFO - Started process (PID=435) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:26:01.094+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:26:01.097+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:26:01.097+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:26:01.287+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:26:01.318+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:26:01.317+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:26:01.333+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:26:01.333+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:26:01.342+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.266 seconds
+[2026-09-21T15:26:31.565+0000] {processor.py:161} INFO - Started process (PID=460) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:26:31.567+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:26:31.570+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:26:31.569+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:26:31.733+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:26:31.749+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:26:31.748+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:26:31.758+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:26:31.758+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:26:31.766+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.209 seconds
+[2026-09-21T15:27:01.890+0000] {processor.py:161} INFO - Started process (PID=466) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:27:01.892+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:27:01.894+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:27:01.894+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:27:02.141+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:27:02.169+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:27:02.168+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:27:02.184+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:27:02.183+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:27:02.192+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.313 seconds
+[2026-09-21T15:27:32.714+0000] {processor.py:161} INFO - Started process (PID=475) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:27:32.717+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:27:32.721+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:27:32.721+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:27:32.912+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:27:32.934+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:27:32.934+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:27:32.948+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:27:32.948+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:27:32.956+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.256 seconds
+[2026-09-21T15:28:03.011+0000] {processor.py:161} INFO - Started process (PID=516) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:28:03.012+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:28:03.014+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:28:03.014+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:28:03.165+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:28:03.187+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:28:03.187+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:28:03.206+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:28:03.206+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:28:03.226+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.223 seconds
+[2026-09-21T15:28:33.633+0000] {processor.py:161} INFO - Started process (PID=570) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:28:33.635+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:28:33.639+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:28:33.639+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:28:33.996+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:28:34.034+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:28:34.034+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:28:34.064+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:28:34.063+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:28:34.085+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.466 seconds
+[2026-09-21T15:29:04.374+0000] {processor.py:161} INFO - Started process (PID=640) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:29:04.376+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:29:04.380+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:29:04.379+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:29:04.729+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:29:04.767+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:29:04.767+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:29:04.797+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:29:04.797+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:29:04.816+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.454 seconds
+[2026-09-21T15:29:35.310+0000] {processor.py:161} INFO - Started process (PID=688) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:29:35.315+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:29:35.324+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:29:35.323+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:29:35.958+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:29:36.032+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:29:36.031+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:29:36.098+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:29:36.098+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:29:36.138+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.853 seconds
+[2026-09-21T15:30:06.472+0000] {processor.py:161} INFO - Started process (PID=694) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:30:06.474+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:30:06.478+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:30:06.478+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:30:06.895+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:30:06.942+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:30:06.941+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:30:06.976+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:30:06.976+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:30:07.001+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.541 seconds
+[2026-09-21T15:30:37.320+0000] {processor.py:161} INFO - Started process (PID=700) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:30:37.321+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:30:37.323+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:30:37.322+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:30:37.477+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:30:37.498+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:30:37.498+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:30:37.511+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:30:37.511+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:30:37.520+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.208 seconds
+[2026-09-21T15:31:07.579+0000] {processor.py:161} INFO - Started process (PID=706) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:31:07.580+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:31:07.584+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:31:07.584+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:31:07.753+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:31:07.770+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:31:07.770+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:31:07.781+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:31:07.781+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:31:07.789+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.220 seconds
+[2026-09-21T15:31:38.014+0000] {processor.py:161} INFO - Started process (PID=712) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:31:38.017+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:31:38.020+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:31:38.019+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:31:38.269+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:31:38.301+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:31:38.301+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:31:38.323+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:31:38.323+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:31:38.343+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.339 seconds
+[2026-09-21T15:32:08.709+0000] {processor.py:161} INFO - Started process (PID=718) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:32:08.717+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:32:08.731+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:32:08.728+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:32:09.529+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:32:09.627+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:32:09.625+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:32:09.678+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:32:09.678+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:32:09.724+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 1.066 seconds
+[2026-09-21T15:32:40.123+0000] {processor.py:161} INFO - Started process (PID=724) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:32:40.125+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:32:40.130+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:32:40.129+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:32:40.587+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:32:40.660+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:32:40.658+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:32:40.734+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:32:40.733+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:32:40.775+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.668 seconds
+[2026-09-21T15:33:11.109+0000] {processor.py:161} INFO - Started process (PID=730) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:33:11.110+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:33:11.113+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:33:11.113+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:33:11.410+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:33:11.450+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:33:11.449+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:33:11.486+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:33:11.486+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:33:11.504+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.406 seconds
+[2026-09-21T15:49:19.897+0000] {processor.py:161} INFO - Started process (PID=235) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:49:19.898+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:49:19.902+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:49:19.902+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:49:20.104+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:49:20.122+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:49:20.122+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:49:20.139+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:49:20.139+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:49:20.154+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.261 seconds
+[2026-09-21T15:49:50.329+0000] {processor.py:161} INFO - Started process (PID=279) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:49:50.330+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:49:50.331+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:49:50.331+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:49:50.460+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:49:50.505+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:49:50.505+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:49:50.513+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:49:50.513+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:49:50.520+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.196 seconds
+[2026-09-21T15:50:20.674+0000] {processor.py:161} INFO - Started process (PID=285) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:50:20.674+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:50:20.676+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:50:20.675+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:50:20.796+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:50:20.807+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:50:20.807+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:50:20.816+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:50:20.816+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:50:20.823+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.152 seconds
+[2026-09-21T15:50:50.872+0000] {processor.py:161} INFO - Started process (PID=291) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:50:50.874+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:50:50.876+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:50:50.876+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:50:51.049+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:50:51.062+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:50:51.062+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:50:51.071+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:50:51.071+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:50:51.077+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.215 seconds
+[2026-09-21T15:51:21.196+0000] {processor.py:161} INFO - Started process (PID=297) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:51:21.197+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:51:21.197+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:51:21.197+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:51:21.313+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:51:21.324+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:51:21.324+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:51:21.332+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:51:21.332+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:51:21.339+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.147 seconds
+[2026-09-21T15:51:51.432+0000] {processor.py:161} INFO - Started process (PID=303) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:51:51.433+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:51:51.434+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:51:51.434+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:51:51.567+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:51:51.581+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:51:51.580+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:51:51.591+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:51:51.591+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:51:51.599+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.171 seconds
+[2026-09-21T15:52:21.784+0000] {processor.py:161} INFO - Started process (PID=309) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:52:21.784+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:52:21.785+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:52:21.785+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:52:21.896+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:52:21.906+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:52:21.906+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:52:21.915+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:52:21.915+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:52:21.924+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.144 seconds
+[2026-09-21T15:52:51.995+0000] {processor.py:161} INFO - Started process (PID=315) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:52:51.995+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:52:51.996+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:52:51.996+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:52:52.106+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:52:52.117+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:52:52.117+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:52:52.125+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:52:52.125+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:52:52.264+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.272 seconds
+[2026-09-21T15:53:22.335+0000] {processor.py:161} INFO - Started process (PID=321) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:53:22.335+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:53:22.336+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:53:22.336+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:53:22.445+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:53:22.458+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:53:22.458+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:53:22.467+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:53:22.467+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:53:22.473+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.142 seconds
+[2026-09-21T15:53:52.677+0000] {processor.py:161} INFO - Started process (PID=327) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:53:52.678+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:53:52.679+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:53:52.678+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:53:52.784+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:53:52.795+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:53:52.795+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:53:52.803+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:53:52.803+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:53:52.809+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.136 seconds
+[2026-09-21T15:54:22.916+0000] {processor.py:161} INFO - Started process (PID=333) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:54:22.917+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:54:22.918+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:54:22.917+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:54:23.021+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:54:23.032+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:54:23.032+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:54:23.039+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:54:23.039+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:54:23.047+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.135 seconds
+[2026-09-21T15:54:53.198+0000] {processor.py:161} INFO - Started process (PID=339) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:54:53.199+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:54:53.200+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:54:53.200+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:54:53.304+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:54:53.314+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:54:53.313+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:54:53.322+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:54:53.322+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:54:53.328+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.134 seconds
+[2026-09-21T15:55:23.402+0000] {processor.py:161} INFO - Started process (PID=345) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:55:23.402+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:55:23.403+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:55:23.403+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:55:23.515+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:55:23.527+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:55:23.527+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:55:23.536+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:55:23.536+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:55:23.543+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.144 seconds
+[2026-09-21T15:55:53.708+0000] {processor.py:161} INFO - Started process (PID=351) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:55:53.709+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:55:53.710+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:55:53.709+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:55:53.817+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:55:53.827+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:55:53.827+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:55:53.835+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:55:53.835+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:55:53.841+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.138 seconds
+[2026-09-21T15:56:23.931+0000] {processor.py:161} INFO - Started process (PID=357) to work on /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:56:23.932+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/customer360_dag.py for tasks to queue
+[2026-09-21T15:56:23.933+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:56:23.932+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:56:24.042+0000] {processor.py:840} INFO - DAG(s) 'customer360_etl_pipeline' retrieved from /opt/airflow/dags/customer360_dag.py
+[2026-09-21T15:56:24.053+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:56:24.053+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-09-21T15:56:24.061+0000] {logging_mixin.py:188} INFO - [2026-09-21T15:56:24.061+0000] {dag.py:3954} INFO - Setting next_dagrun for customer360_etl_pipeline to 2026-09-21 08:00:00+00:00, run_after=2026-09-22 08:00:00+00:00
+[2026-09-21T15:56:24.067+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/customer360_dag.py took 0.140 seconds

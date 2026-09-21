@@ -1,0 +1,22 @@
+[2026-09-21T15:49:20.203+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-09-21T15:49:20.224+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: customer360_etl_pipeline.load_csv_to_staging manual__2026-09-21T00:00:00+00:00 [queued]>
+[2026-09-21T15:49:20.229+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: customer360_etl_pipeline.load_csv_to_staging manual__2026-09-21T00:00:00+00:00 [queued]>
+[2026-09-21T15:49:20.229+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2026-09-21T15:49:20.235+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): load_csv_to_staging> on 2026-09-21 00:00:00+00:00
+[2026-09-21T15:49:20.238+0000] {standard_task_runner.py:63} INFO - Started process 244 to run task
+[2026-09-21T15:49:20.240+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'customer360_etl_pipeline', 'load_csv_to_staging', 'manual__2026-09-21T00:00:00+00:00', '--job-id', '44', '--raw', '--subdir', 'DAGS_FOLDER/customer360_dag.py', '--cfg-path', '/tmp/tmpi59ayavh']
+[2026-09-21T15:49:20.242+0000] {standard_task_runner.py:91} INFO - Job 44: Subtask load_csv_to_staging
+[2026-09-21T15:49:20.281+0000] {task_command.py:426} INFO - Running <TaskInstance: customer360_etl_pipeline.load_csv_to_staging manual__2026-09-21T00:00:00+00:00 [running]> on host 186ccd638a63
+[2026-09-21T15:49:20.349+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='customer360_etl_pipeline' AIRFLOW_CTX_TASK_ID='load_csv_to_staging' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-21T00:00:00+00:00'
+[2026-09-21T15:49:20.350+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-09-21T15:49:20.367+0000] {postgresql.py:120} INFO - 
+[2026-09-21T15:49:20.367+0000] {postgresql.py:121} INFO - ============================================================
+[2026-09-21T15:49:20.368+0000] {postgresql.py:122} INFO - STEP 2 - BRONZE: CSV -> stg.stg_activity_extract
+[2026-09-21T15:49:20.368+0000] {postgresql.py:123} INFO - ============================================================
+[2026-09-21T15:49:20.542+0000] {postgresql.py:165} INFO - BRONZE COMPLETE - 21,500 raw records loaded.
+[2026-09-21T15:49:20.543+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-09-21T15:49:20.544+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-09-21T15:49:20.551+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=customer360_etl_pipeline, task_id=load_csv_to_staging, execution_date=20260921T000000, start_date=20260921T154920, end_date=20260921T154920
+[2026-09-21T15:49:20.574+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-09-21T15:49:20.590+0000] {taskinstance.py:3482} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-09-21T15:49:20.591+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

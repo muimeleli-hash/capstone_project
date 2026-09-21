@@ -1,0 +1,39 @@
+{"timestamp":"2026-09-18T15:37:30.939729Z","level":"info","event":"::group::Pre Execute","logger":"task","filename":"task_runner.py","lineno":2412}
+{"timestamp":"2026-09-18T15:37:37.005249Z","level":"info","event":"DAG bundles loaded: dags-folder","dag_id":"customer360_etl_pipeline","try_number":1,"task_id":"run_sql_script","ti_id":"01a0b52a-6670-75df-8af5-b09dd5e6b9e8","map_index":-1,"run_id":"scheduled__2026-09-18T08:00:00+00:00","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":304}
+{"timestamp":"2026-09-18T15:37:37.006713Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/customer360_dag.py","dag_id":"customer360_etl_pipeline","try_number":1,"task_id":"run_sql_script","ti_id":"01a0b52a-6670-75df-8af5-b09dd5e6b9e8","map_index":-1,"run_id":"scheduled__2026-09-18T08:00:00+00:00","logger":"airflow.dag_processing.dagbag.BundleDagBag","filename":"dagbag.py","lineno":460}
+{"timestamp":"2026-09-18T15:37:38.999269Z","level":"warning","event":"The `airflow.operators.python.PythonOperator` attribute is deprecated. Please use `'airflow.providers.standard.operators.python.PythonOperator'`.","category":"UserWarning","filename":"/opt/airflow/dags/customer360_dag.py","lineno":22,"dag_id":"customer360_etl_pipeline","try_number":1,"task_id":"run_sql_script","ti_id":"01a0b52a-6670-75df-8af5-b09dd5e6b9e8","map_index":-1,"run_id":"scheduled__2026-09-18T08:00:00+00:00","logger":"py.warnings"}
+{"timestamp":"2026-09-18T15:37:39.003797Z","level":"info","event":"Worker startup parse complete","bundle_name":"dags-folder","bundle_version":null,"dag_file":"customer360_dag.py","dag_id":"customer360_etl_pipeline","bundle_prepare_ms":3,"dag_file_parse_ms":1997,"try_number":1,"task_id":"run_sql_script","ti_id":"01a0b52a-6670-75df-8af5-b09dd5e6b9e8","map_index":-1,"run_id":"scheduled__2026-09-18T08:00:00+00:00","logger":"task","filename":"task_runner.py","lineno":1073}
+{"timestamp":"2026-09-18T15:37:39.083917Z","level":"info","event":"::endgroup::","dag_id":"customer360_etl_pipeline","try_number":1,"task_id":"run_sql_script","ti_id":"01a0b52a-6670-75df-8af5-b09dd5e6b9e8","map_index":-1,"run_id":"scheduled__2026-09-18T08:00:00+00:00","logger":"task","filename":"task_runner.py","lineno":2232}
+{"timestamp":"2026-09-18T15:37:39.088148Z","level":"info","event":"Running SQL script: /opt/airflow/Script-16.sql.sql","logger":"root","dag_id":"customer360_etl_pipeline","try_number":1,"task_id":"run_sql_script","ti_id":"01a0b52a-6670-75df-8af5-b09dd5e6b9e8","map_index":-1,"run_id":"scheduled__2026-09-18T08:00:00+00:00","filename":"postgresql.py","lineno":75}
+{"timestamp":"2026-09-18T15:37:39.194839Z","level":"info","event":"CREATE SCHEMA","logger":"task.stdout"}
+{"timestamp":"2026-09-18T15:37:39.195644Z","level":"info","event":"CREATE SCHEMA","logger":"task.stdout"}
+{"timestamp":"2026-09-18T15:37:39.196820Z","level":"error","event":"psql:/opt/airflow/Script-16.sql.sql:10: NOTICE:  table \"stg_activity_extract\" does not exist, skipping","logger":"task.stderr"}
+{"timestamp":"2026-09-18T15:37:39.197322Z","level":"info","event":"DROP TABLE","logger":"task.stdout"}
+{"timestamp":"2026-09-18T15:37:39.198078Z","level":"error","event":"psql:/opt/airflow/Script-16.sql.sql:11: NOTICE:  table \"fct_transactions\" does not exist, skipping","logger":"task.stderr"}
+{"timestamp":"2026-09-18T15:37:39.198637Z","level":"info","event":"DROP TABLE","logger":"task.stdout"}
+{"timestamp":"2026-09-18T15:37:39.198954Z","level":"info","event":"DROP TABLE","logger":"task.stdout"}
+{"timestamp":"2026-09-18T15:37:39.199257Z","level":"error","event":"psql:/opt/airflow/Script-16.sql.sql:12: NOTICE:  table \"fct_crm_interactions\" does not exist, skipping","logger":"task.stderr"}
+{"timestamp":"2026-09-18T15:37:39.199499Z","level":"error","event":"psql:/opt/airflow/Script-16.sql.sql:13: NOTICE:  table \"dim_accounts\" does not exist, skipping","logger":"task.stderr"}
+{"timestamp":"2026-09-18T15:37:39.200034Z","level":"info","event":"DROP TABLE","logger":"task.stdout"}
+{"timestamp":"2026-09-18T15:37:39.200806Z","level":"info","event":"DROP TABLE","logger":"task.stdout"}
+{"timestamp":"2026-09-18T15:37:39.201653Z","level":"error","event":"psql:/opt/airflow/Script-16.sql.sql:14: NOTICE:  table \"dim_clients\" does not exist, skipping","logger":"task.stderr"}
+{"timestamp":"2026-09-18T15:37:39.201797Z","level":"error","event":"psql:/opt/airflow/Script-16.sql.sql:15: NOTICE:  table \"dim_date\" does not exist, skipping","logger":"task.stderr"}
+{"timestamp":"2026-09-18T15:37:39.201939Z","level":"error","event":"psql:/opt/airflow/Script-16.sql.sql:16: NOTICE:  table \"dim_channel\" does not exist, skipping","logger":"task.stderr"}
+{"timestamp":"2026-09-18T15:37:39.202083Z","level":"info","event":"DROP TABLE","logger":"task.stdout"}
+{"timestamp":"2026-09-18T15:37:39.202201Z","level":"info","event":"DROP TABLE","logger":"task.stdout"}
+{"timestamp":"2026-09-18T15:37:39.209002Z","level":"info","event":"CREATE TABLE","logger":"task.stdout"}
+{"timestamp":"2026-09-18T15:37:39.214986Z","level":"info","event":"CREATE TABLE","logger":"task.stdout"}
+{"timestamp":"2026-09-18T15:37:39.220133Z","level":"info","event":"CREATE TABLE","logger":"task.stdout"}
+{"timestamp":"2026-09-18T15:37:39.225314Z","level":"info","event":"CREATE TABLE","logger":"task.stdout"}
+{"timestamp":"2026-09-18T15:37:39.232936Z","level":"info","event":"CREATE TABLE","logger":"task.stdout"}
+{"timestamp":"2026-09-18T15:37:39.238047Z","level":"info","event":"CREATE TABLE","logger":"task.stdout"}
+{"timestamp":"2026-09-18T15:37:39.243552Z","level":"info","event":"CREATE TABLE","logger":"task.stdout"}
+{"timestamp":"2026-09-18T15:37:39.246110Z","level":"info","event":"CREATE INDEX","logger":"task.stdout"}
+{"timestamp":"2026-09-18T15:37:39.247945Z","level":"info","event":"CREATE INDEX","logger":"task.stdout"}
+{"timestamp":"2026-09-18T15:37:39.249760Z","level":"info","event":"CREATE INDEX","logger":"task.stdout"}
+{"timestamp":"2026-09-18T15:37:39.251820Z","level":"info","event":"CREATE INDEX","logger":"task.stdout"}
+{"timestamp":"2026-09-18T15:37:39.254032Z","level":"info","event":"CREATE INDEX","logger":"task.stdout"}
+{"timestamp":"2026-09-18T15:37:39.257114Z","level":"info","event":"SQL script executed via psql successfully.","logger":"root","dag_id":"customer360_etl_pipeline","try_number":1,"task_id":"run_sql_script","ti_id":"01a0b52a-6670-75df-8af5-b09dd5e6b9e8","map_index":-1,"run_id":"scheduled__2026-09-18T08:00:00+00:00","filename":"postgresql.py","lineno":92}
+{"timestamp":"2026-09-18T15:37:39.257569Z","level":"info","event":"Done. Returned value was: None","dag_id":"customer360_etl_pipeline","try_number":1,"task_id":"run_sql_script","ti_id":"01a0b52a-6670-75df-8af5-b09dd5e6b9e8","map_index":-1,"run_id":"scheduled__2026-09-18T08:00:00+00:00","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":233}
+{"timestamp":"2026-09-18T15:37:39.257752Z","level":"info","event":"::group::Post Execute","dag_id":"customer360_etl_pipeline","try_number":1,"task_id":"run_sql_script","ti_id":"01a0b52a-6670-75df-8af5-b09dd5e6b9e8","map_index":-1,"run_id":"scheduled__2026-09-18T08:00:00+00:00","logger":"task","filename":"task_runner.py","lineno":1580}
+{"timestamp":"2026-09-18T15:37:39.295832Z","level":"info","event":"::endgroup::","dag_id":"customer360_etl_pipeline","try_number":1,"task_id":"run_sql_script","ti_id":"01a0b52a-6670-75df-8af5-b09dd5e6b9e8","map_index":-1,"run_id":"scheduled__2026-09-18T08:00:00+00:00","logger":"task","filename":"task_runner.py","lineno":2379}
