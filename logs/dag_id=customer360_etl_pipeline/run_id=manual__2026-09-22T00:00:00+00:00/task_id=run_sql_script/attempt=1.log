@@ -1,4 +1,0 @@
-[2026-09-21T15:26:22.389+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
-[2026-09-21T15:26:22.417+0000] {taskinstance.py:2063} INFO - Dependencies not met for <TaskInstance: customer360_etl_pipeline.run_sql_script manual__2026-09-22T00:00:00+00:00 [success]>, dependency 'Task Instance State' FAILED: Task is in the 'success' state.
-[2026-09-21T15:26:22.431+0000] {taskinstance.py:2063} INFO - Dependencies not met for <TaskInstance: customer360_etl_pipeline.run_sql_script manual__2026-09-22T00:00:00+00:00 [success]>, dependency 'Execution Date' FAILED: Execution date 2026-09-22T00:00:00+00:00 is in the future (the current date is 2026-09-21T15:26:22.431334+00:00).
-[2026-09-21T15:26:22.490+0000] {local_task_job_runner.py:163} INFO - Task is not able to be run
