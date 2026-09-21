@@ -1,7 +1,7 @@
 WITH max_ref AS (
     SELECT MAX(event_timestamp) AS max_time FROM dwh.fct_activity
 )
-SELECT 
+SELECT
     c.client_number,
     c.first_name,
     c.last_name,

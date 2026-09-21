@@ -763,7 +763,7 @@ def load_dwh_fact():
     conn = get_connection()
     cur = conn.cursor()
 
-   
+
     cur.execute("TRUNCATE TABLE dwh.fct_activity RESTART IDENTITY;")
 
     cur.execute("""

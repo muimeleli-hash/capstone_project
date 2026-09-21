@@ -1,5 +1,5 @@
 WITH customer_aggregates AS (
-    SELECT 
+    SELECT
         c.customer_key,
         COUNT(CASE WHEN e.interaction_type IS NOT NULL THEN f.activity_key END) AS total_interactions,
         COALESCE(SUM(f.amount), 0) AS total_transaction_value
@@ -8,8 +8,8 @@ WITH customer_aggregates AS (
     LEFT JOIN dwh.dim_event e ON f.event_key = e.event_key
     GROUP BY c.customer_key
 )
-SELECT 
-    CASE 
+SELECT
+    CASE
         WHEN total_interactions = 0 THEN '0 interactions'
         WHEN total_interactions BETWEEN 1 AND 2 THEN '1-2 interactions'
         WHEN total_interactions BETWEEN 3 AND 5 THEN '3-5 interactions'

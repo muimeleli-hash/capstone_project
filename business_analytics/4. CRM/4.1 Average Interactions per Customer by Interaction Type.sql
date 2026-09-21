@@ -1,5 +1,5 @@
 WITH interaction_counts AS (
-    SELECT 
+    SELECT
         e.interaction_type,
         f.customer_key,
         COUNT(f.activity_key) AS interactions
@@ -11,7 +11,7 @@ WITH interaction_counts AS (
 total_customers AS (
     SELECT COUNT(*) AS total_cust FROM dwh.dim_customer
 )
-SELECT 
+SELECT
     ic.interaction_type,
     SUM(ic.interactions) AS total_interactions,
     -- Average across entire customer base

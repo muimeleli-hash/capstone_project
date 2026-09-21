@@ -1,4 +1,4 @@
-SELECT 
+SELECT
     product_type,
     COUNT(account_key) AS total_accounts,
     SUM(account_balance) AS total_balance,

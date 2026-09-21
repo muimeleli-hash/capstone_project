@@ -1,4 +1,4 @@
-SELECT 
+SELECT
     c.channel,
     COUNT(f.activity_key) AS transaction_count,
     ROUND(100.0 * COUNT(f.activity_key) / SUM(COUNT(f.activity_key)) OVER (), 2) AS volume_share_pct,

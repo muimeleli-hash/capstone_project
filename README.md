@@ -120,4 +120,3 @@ Notes
 
 - The loader uses SQLAlchemy for query helpers while using a raw DBAPI connection for high-performance copy operations.
 - Filenames and defaults are kept simple for a learning-focused capstone; treat credentials carefully and do not commit secrets.
-

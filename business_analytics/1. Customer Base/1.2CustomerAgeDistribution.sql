@@ -1,12 +1,12 @@
 WITH customer_ages AS (
-    SELECT 
+    SELECT
         customer_key,
         FLOOR(DATE_PART('year', AGE((SELECT MAX(full_date) FROM dwh.dim_date), date_of_birth))) AS age
     FROM dwh.dim_customer
     WHERE date_of_birth IS NOT NULL
 )
-SELECT 
-    CASE 
+SELECT
+    CASE
         WHEN age < 25 THEN '1. Under 25'
         WHEN age BETWEEN 25 AND 34 THEN '2. 25 - 34'
         WHEN age BETWEEN 35 AND 49 THEN '3. 35 - 49'

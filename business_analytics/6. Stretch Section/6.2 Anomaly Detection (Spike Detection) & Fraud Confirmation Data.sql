@@ -1,5 +1,5 @@
 WITH account_stats AS (
-    SELECT 
+    SELECT
         account_key,
         AVG(amount) AS mean_amount,
         STDDEV(amount) AS std_amount,
@@ -10,7 +10,7 @@ WITH account_stats AS (
     HAVING COUNT(*) >= 10 AND STDDEV(amount) > 0
 ),
 flagged_tx AS (
-    SELECT 
+    SELECT
         f.activity_key,
         f.account_key,
         f.event_timestamp,
@@ -21,7 +21,7 @@ flagged_tx AS (
     JOIN account_stats s ON f.account_key = s.account_key
     WHERE (f.amount - s.mean_amount) / s.std_amount > 3.0
 )
-SELECT 
+SELECT
     ft.activity_key,
     a.account_number,
     ft.event_timestamp,

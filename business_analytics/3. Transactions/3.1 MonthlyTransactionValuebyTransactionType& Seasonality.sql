@@ -1,4 +1,4 @@
-SELECT 
+SELECT
     d.year,
     d.month,
     d.month_name,

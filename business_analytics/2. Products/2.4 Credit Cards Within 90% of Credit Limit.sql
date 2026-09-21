@@ -1,4 +1,4 @@
-SELECT 
+SELECT
     COUNT(*) AS total_credit_cards,
     COUNT(CASE WHEN account_balance >= 0.90 * credit_limit THEN 1 END) AS near_limit_accounts,
     ROUND(
