@@ -11,7 +11,7 @@ Task chain:
     t4_load_dwh         -> reads the cleaned parquet and loads dims/facts
 
 This file must live in the `dags/` folder that's mounted into the
-Airflow container (see docker-compose.yaml).
+Airflow container (see plugins/docker-compose.yaml).
 """
 
 import sys
@@ -26,8 +26,9 @@ from airflow.operators.python import PythonOperator
 # /opt/airflow, so the ETL module and source files live beside the DAG.
 # ------------------------------------------------------------------
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-if PROJECT_ROOT not in sys.path:
-    sys.path.insert(0, PROJECT_ROOT)
+SCRIPTS_DIR = os.path.join(PROJECT_ROOT, "scripts")
+if SCRIPTS_DIR not in sys.path:
+    sys.path.insert(0, SCRIPTS_DIR)
 
 import customer360 as etl  # noqa: E402  (import after sys.path tweak)
 
@@ -43,7 +44,7 @@ if CSV_PATH is None:
     raise FileNotFoundError(
         "CSV not found in project root or data/raw/."
     )
-SQL_PATH = os.path.join(PROJECT_ROOT, "Script-16.sql.sql")
+SQL_PATH = os.path.join(SCRIPTS_DIR, "Script-16.sql.sql")
 CLEAN_PARQUET_PATH = os.path.join(PROJECT_ROOT, "tmp", "clean_staging.parquet")
 
 

@@ -763,7 +763,7 @@ def load_dwh_fact():
     conn = get_connection()
     cur = conn.cursor()
 
-    # Rebuild fact for the current source extract.
+   
     cur.execute("TRUNCATE TABLE dwh.fct_activity RESTART IDENTITY;")
 
     cur.execute("""
@@ -878,11 +878,12 @@ def validate_pipeline():
 # ============================================================
 if __name__ == "__main__":
 
-    BASE_DIR = Path(__file__).resolve().parent
+    SCRIPTS_DIR = Path(__file__).resolve().parent
+    PROJECT_ROOT = SCRIPTS_DIR.parent
 
     csv_candidates = [
-        BASE_DIR / "activity_extract.csv",
-        BASE_DIR / "data" / "raw" / "activity_extract.csv",
+        PROJECT_ROOT / "activity_extract.csv",
+        PROJECT_ROOT / "data" / "raw" / "activity_extract.csv",
     ]
     csv_file = next((p for p in csv_candidates if p.exists()), None)
     if csv_file is None:
@@ -891,7 +892,7 @@ if __name__ == "__main__":
             "data/raw/."
         )
 
-    sql_file = BASE_DIR / "Script-16.sql.sql"
+    sql_file = SCRIPTS_DIR / "Script-16.sql.sql"
 
     logging.info("")
     logging.info("################################################################")

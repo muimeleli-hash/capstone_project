@@ -27,28 +27,28 @@ export DB_PASSWORD=4462
 3. Start Postgres (one of):
 
 - Use a local Postgres installation (recommended for development).
-- Or start via Docker Compose (see `docker-compose.yaml`) with `docker compose up -d`.
+- Or start via Docker Compose (see `plugins/docker-compose.yaml`) with `docker compose -f plugins/docker-compose.yaml up -d`.
 
 4. Run the loader which applies the SQL schema and loads `activity_extract.csv`:
 
 ```bash
-python3 postgresql.py
+python3 scripts/customer360.py
 ```
 
 Repository Layout
 
-- [postgresql.py](postgresql.py): Python loader that applies the SQL schema and loads CSV into staging and DWH.
-- [Script-16.sql.sql](Script-16.sql.sql): SQL schema used to create `stg` and `dwh` objects.
-- [activity_extract.csv](activity_extract.csv): Example source data file.
+- [scripts/customer360.py](scripts/customer360.py): Python loader that applies the SQL schema and loads CSV into staging and DWH.
+- [scripts/Script-16.sql.sql](scripts/Script-16.sql.sql): SQL schema used to create `stg` and `dwh` objects.
+- [data/raw/activity_extract.csv](data/raw/activity_extract.csv): Example source data file.
 - [dags/](dags/): Airflow DAG definitions (e.g., `customer360_dag.py`).
-- [docker-compose.yaml](docker-compose.yaml): Optional compose file for services used in development.
+- [plugins/docker-compose.yaml](plugins/docker-compose.yaml): Optional compose file for services used in development.
 - [airflow/], [airflow-docker/], [config/]: Airflow-related configs, logs and containerized examples.
 
 Design & Data Flow
 
-1. Ingest: `activity_extract.csv` is placed in the project root.
-2. Load: `postgresql.py` creates staging tables and loads CSV into the `stg` schema using an efficient COPY or bulk insert strategy.
-3. Transform: SQL in `Script-16.sql.sql` creates DWH objects in `dwh` schema (views/tables) that transform and aggregate staging data.
+1. Ingest: `data/raw/activity_extract.csv` is the source file.
+2. Load: `scripts/customer360.py` creates staging tables and loads CSV into the `stg` schema using an efficient COPY or bulk insert strategy.
+3. Transform: SQL in `scripts/Script-16.sql.sql` creates DWH objects in `dwh` schema (views/tables) that transform and aggregate staging data.
 4. Orchestration: Airflow DAG(s) under `dags/` wrap the above steps into scheduled or manual runs. Logs are in `logs/`.
 
 Airflow
@@ -57,7 +57,7 @@ Airflow
 - Example to run with Docker Compose (from repository root):
 
 ```bash
-docker compose -f docker-compose.yaml up -d
+	docker compose -f plugins/docker-compose.yaml up -d
 # or for the dockerized airflow example
 cd airflow-docker && docker compose up -d
 ```
@@ -82,8 +82,8 @@ Important environment variables (used by scripts and DAGs):
 
 Files and Purpose
 
-- `postgresql.py`: Connects to Postgres using SQLAlchemy, applies the SQL in `Script-16.sql.sql`, and loads `activity_extract.csv` into staging. It prefers `psql` COPY when available for speed, falling back to Python-based bulk inserts.
-- `Script-16.sql.sql`: DDL and SQL used to build staging and DWH structures and any required helper functions.
+- `scripts/customer360.py`: Connects to Postgres using SQLAlchemy, applies the SQL in `scripts/Script-16.sql.sql`, and loads `data/raw/activity_extract.csv` into staging.
+- `scripts/Script-16.sql.sql`: DDL and SQL used to build staging and DWH structures and any required helper functions.
 - `dags/customer360_dag.py`: Airflow DAG describing ordering: clean staging, load CSV to staging, load to DWH, run SQL scripts.
 
 Running the full pipeline (example)
@@ -92,7 +92,7 @@ Running the full pipeline (example)
 2. Run:
 
 ```bash
-python3 postgresql.py
+python3 scripts/customer360.py
 ```
 
 Or trigger the Airflow DAG via the UI or:
@@ -104,7 +104,7 @@ airflow dags trigger customer360_etl_pipeline
 Logging & Troubleshooting
 
 - Airflow logs: `logs/dag_id=...` and `airflow/logs/` in this repository for local runs.
-- If the loader fails during COPY, check permissions and CSV formatting; `postgresql.py` will emit helpful traceback and SQL error messages.
+- If the loader fails during COPY, check permissions and CSV formatting; `scripts/customer360.py` will emit helpful traceback and SQL error messages.
 
 Testing
 
@@ -121,10 +121,3 @@ Notes
 - The loader uses SQLAlchemy for query helpers while using a raw DBAPI connection for high-performance copy operations.
 - Filenames and defaults are kept simple for a learning-focused capstone; treat credentials carefully and do not commit secrets.
 
-If you'd like, I can also:
-
-- Add a `Makefile` or convenience scripts to standardize common commands.
-- Add a `tests/` skeleton and a CI workflow to run basic checks.
-- Create a short architecture diagram (Mermaid) and include it in this README.
-
-If you want me to commit this change, tell me and I'll show the diff and create a commit.
