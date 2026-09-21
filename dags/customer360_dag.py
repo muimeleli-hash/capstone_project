@@ -27,10 +27,10 @@ from airflow.operators.python import PythonOperator
 # ------------------------------------------------------------------
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 SCRIPTS_DIR = os.path.join(PROJECT_ROOT, "scripts")
-if SCRIPTS_DIR not in sys.path:
-    sys.path.insert(0, SCRIPTS_DIR)
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
 
-import customer360 as etl  # noqa: E402  (import after sys.path tweak)
+from scripts import customer360 as etl  # noqa: E402  (import after sys.path tweak)
 
 # ------------------------------------------------------------------
 # File paths used by the ETL script.
