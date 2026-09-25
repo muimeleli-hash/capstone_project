@@ -1,12 +1,28 @@
-Project: Customer360 ETL / Capstone
+# Customer 360 Data Engineering Capstone
 
-Overview
+An end-to-end customer activity pipeline built with Python, PostgreSQL, SQL, and Apache Airflow. It ingests a CSV extract, standardizes customer and activity data, and builds a dimensional warehouse for customer, product, transaction, and CRM analysis.
 
-This repository contains a small end-to-end data engineering project that ingests a CSV file into a Postgres-backed data warehouse, runs SQL scripts to build staging and DWH objects, and includes Airflow DAG(s) to orchestrate the pipeline. The core assets are a loader script, SQL schema, an example CSV, and simple Airflow configuration to run the pipeline locally or in containers.
+## Pipeline
 
-Quickstart
+The pipeline uses a Bronze/Silver/Gold structure:
 
-1. Create a Python virtual environment and install dependencies:
+1. **Bronze:** Load the source CSV into `stg.stg_activity_extract` using PostgreSQL `COPY`.
+2. **Silver:** Normalize text, email addresses, South African phone numbers, dates, numeric values, and resolution flags; remove duplicate records; populate cleaned staging dimensions and facts.
+3. **Gold:** Load the `dwh` dimensions and `dwh.fct_activity` fact table.
+4. **Validation:** Report row counts for the warehouse tables.
+
+The Airflow DAG runs the same stages as separate tasks and is scheduled daily at 08:00 (Airflow's configured timezone). The DAG is defined in [`dags/customer360_dag.py`](dags/customer360_dag.py).
+
+## Requirements
+
+- Python 3.10 or newer
+- PostgreSQL 15 or newer
+- PostgreSQL client tools (`psql`) on `PATH`
+- Docker and Docker Compose for the containerized setup
+
+## Run Locally
+
+Create an environment and install the Python dependencies:
 
 ```bash
 python3 -m venv .venv
@@ -14,109 +30,71 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-2. Provide Postgres connection environment variables (optional — defaults shown):
+Start PostgreSQL and create a database user with permission to create databases and schemas. Set the connection variables before running the pipeline:
 
 ```bash
 export DB_HOST=localhost
 export DB_PORT=5432
 export DB_NAME=customer360_db
 export DB_USER=postgres
-export DB_PASSWORD=4462
+export DB_PASSWORD='<your-local-postgres-password>'
 ```
 
-3. Start Postgres (one of):
-
-- Use a local Postgres installation (recommended for development).
-- Or start via Docker Compose (see `plugins/docker-compose.yaml`) with `docker compose -f plugins/docker-compose.yaml up -d`.
-
-4. Run the loader which applies the SQL schema and loads `activity_extract.csv`:
+Run the pipeline from the repository root:
 
 ```bash
-python3 scripts/customer360.py
+python scripts/customer360.py
 ```
 
-Repository Layout
+The loader looks for `activity_extract.csv` in the project root first, then `data/raw/activity_extract.csv`. It applies [`scripts/Script-16.sql.sql`](scripts/Script-16.sql.sql), which creates the `stg` and `dwh` schemas and their tables.
 
-- [scripts/customer360.py](scripts/customer360.py): Python loader that applies the SQL schema and loads CSV into staging and DWH.
-- [scripts/Script-16.sql.sql](scripts/Script-16.sql.sql): SQL schema used to create `stg` and `dwh` objects.
-- [data/raw/activity_extract.csv](data/raw/activity_extract.csv): Example source data file.
-- [dags/](dags/): Airflow DAG definitions (e.g., `customer360_dag.py`).
-- [plugins/docker-compose.yaml](plugins/docker-compose.yaml): Optional compose file for services used in development.
-- [airflow/], [airflow-docker/], [config/]: Airflow-related configs, logs and containerized examples.
+## Run with Docker Compose
 
-Design & Data Flow
-
-1. Ingest: `data/raw/activity_extract.csv` is the source file.
-2. Load: `scripts/customer360.py` creates staging tables and loads CSV into the `stg` schema using an efficient COPY or bulk insert strategy.
-3. Transform: SQL in `scripts/Script-16.sql.sql` creates DWH objects in `dwh` schema (views/tables) that transform and aggregate staging data.
-4. Orchestration: Airflow DAG(s) under `dags/` wrap the above steps into scheduled or manual runs. Logs are in `logs/`.
-
-Airflow
-
-- To run Airflow locally you can use the included `airflow.cfg` and the `airflow/` folders. There are two example setups: a local-host setup and a `airflow-docker/` containerized setup.
-- Example to run with Docker Compose (from repository root):
+From the repository root, start the development stack:
 
 ```bash
-	docker compose -f plugins/docker-compose.yaml up -d
-# or for the dockerized airflow example
-cd airflow-docker && docker compose up -d
+docker compose -f plugins/docker-compose.yaml up --build
 ```
 
-- Start the webserver and scheduler (if using local install):
+The Airflow container installs `requirements.txt` at startup, migrates its metadata database, and starts Airflow. Open the UI at [http://localhost:8081](http://localhost:8081). The Compose file creates a local development admin account (`admin` / `admin`). PostgreSQL is published on host port `5433`; the containers connect to it on port `5432`. The DAG `customer360_etl_pipeline` is available in the UI and runs daily at 08:00, or can be triggered manually.
+
+Stop the services with:
 
 ```bash
-airflow db init
-airflow users create --username admin --firstname Admin --lastname User --role Admin --email admin@example.com
-airflow scheduler &
-airflow webserver
+docker compose -f plugins/docker-compose.yaml down
 ```
 
-- DAGs: See `dags/customer360_dag.py` for the pipeline flow. Trigger runs from the Airflow UI or run tasks manually with `airflow dags trigger`.
+To remove the database volume as well (this deletes the local database data), use `docker compose -f plugins/docker-compose.yaml down -v`.
 
-Configuration
+## Analytics and Data Model
 
-Important environment variables (used by scripts and DAGs):
+The SQL analysis is grouped under [`business_analytics/`](business_analytics/):
 
-- `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASSWORD` — Postgres connection details.
-- `AIRFLOW_HOME` — If running Airflow locally and you wish to set a custom home.
+- Customer distribution, age, signup trends, and data quality
+- Product distribution, balances, cross-sell, and credit utilization
+- Transaction value, channel comparisons, active customers, and top customers
+- CRM interaction volume, channel usage, and resolution rates
+- Value tiers, lifecycle, and CRM-to-transaction analysis
+- Retention and transaction anomaly analysis
 
-Files and Purpose
+The [`data modelling/`](data%20modelling/) directory contains the modelled extract and a star-schema diagram.
 
-- `scripts/customer360.py`: Connects to Postgres using SQLAlchemy, applies the SQL in `scripts/Script-16.sql.sql`, and loads `data/raw/activity_extract.csv` into staging.
-- `scripts/Script-16.sql.sql`: DDL and SQL used to build staging and DWH structures and any required helper functions.
-- `dags/customer360_dag.py`: Airflow DAG describing ordering: clean staging, load CSV to staging, load to DWH, run SQL scripts.
+## Repository Guide
 
-Running the full pipeline (example)
+- [`scripts/customer360.py`](scripts/customer360.py): ETL, data cleaning, loading, and validation.
+- [`scripts/Script-16.sql.sql`](scripts/Script-16.sql.sql): Staging and warehouse DDL.
+- [`data/raw/activity_extract.csv`](data/raw/activity_extract.csv): Source activity extract used by the pipeline.
+- [`dags/customer360_dag.py`](dags/customer360_dag.py): Scheduled Airflow orchestration.
+- [`plugins/docker-compose.yaml`](plugins/docker-compose.yaml): Local PostgreSQL and Airflow stack.
+- [`requirements.txt`](requirements.txt): Python dependencies.
+- [`airflow-docker/`](airflow-docker/): Additional Airflow configuration files.
 
-1. Ensure Postgres is running and reachable via env vars.
-2. Run:
+## Configuration and Data Safety
 
-```bash
-python3 scripts/customer360.py
-```
+The loader reads `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, and `DB_PASSWORD`. It has local-development defaults; set these variables explicitly outside a disposable local environment. The included Compose credentials and Airflow account are for local development only and must not be used on an exposed or production deployment.
 
-Or trigger the Airflow DAG via the UI or:
+The CSV extracts contain personal-data-shaped fields, including names, contact details, and dates of birth. Keep this repository private unless the data has been verified as synthetic or has been appropriately anonymized and approved for publication. Do not add real customer data, production credentials, or generated Airflow logs to a public repository.
 
-```bash
-airflow dags trigger customer360_etl_pipeline
-```
+## Validation
 
-Logging & Troubleshooting
-
-- Airflow logs: `logs/dag_id=...` and `airflow/logs/` in this repository for local runs.
-- If the loader fails during COPY, check permissions and CSV formatting; `scripts/customer360.py` will emit helpful traceback and SQL error messages.
-
-Testing
-
-- Unit tests: none included by default. To add tests, create a `tests/` folder and use `pytest`.
-- Manual validation: After pipeline runs, query `dwh` schema tables to confirm row counts and sample values.
-
-Contributing
-
-- Fork, create a branch, open a PR with a clear description of changes.
-- If you add features (tests, CI, improved Docker Compose), update this README with run steps.
-
-Notes
-
-- The loader uses SQLAlchemy for query helpers while using a raw DBAPI connection for high-performance copy operations.
-- Filenames and defaults are kept simple for a learning-focused capstone; treat credentials carefully and do not commit secrets.
+The repository does not currently include an automated test suite. Running `python scripts/customer360.py` performs the pipeline and prints warehouse row counts; you can also inspect the resulting dimensions and fact table directly in PostgreSQL.
