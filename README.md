@@ -2,6 +2,13 @@
 
 An end-to-end customer activity pipeline built with Python, PostgreSQL, SQL, and Apache Airflow. It ingests a CSV extract, standardizes customer and activity data, and builds a dimensional warehouse for customer, product, transaction, and CRM analysis.
 
+[![SQL](https://img.shields.io/badge/SQL-PostgreSQL%20Dialect-336791?logo=postgresql&logoColor=white)](https://www.postgresql.org/docs/)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-4169E1?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Apache Airflow](https://img.shields.io/badge/Apache%20Airflow-2.9.0-017CEE?logo=apacheairflow&logoColor=white)](https://airflow.apache.org/)
+
+**Project report:** [Customer 360 end-to-end data engineering documentation](docs/customer360-project-documentation.pdf)
+
 ## Pipeline
 
 The pipeline uses a Bronze/Silver/Gold structure:
@@ -79,15 +86,31 @@ The SQL analysis is grouped under [`business_analytics/`](business_analytics/):
 
 The [`data modelling/`](data%20modelling/) directory contains the modelled extract and a star-schema diagram.
 
-## Repository Guide
+## Project Structure
 
-- [`scripts/customer360.py`](scripts/customer360.py): ETL, data cleaning, loading, and validation.
-- [`scripts/Script-16.sql.sql`](scripts/Script-16.sql.sql): Staging and warehouse DDL.
-- [`data/raw/activity_extract.csv`](data/raw/activity_extract.csv): Source activity extract used by the pipeline.
-- [`dags/customer360_dag.py`](dags/customer360_dag.py): Scheduled Airflow orchestration.
-- [`plugins/docker-compose.yaml`](plugins/docker-compose.yaml): Local PostgreSQL and Airflow stack.
-- [`requirements.txt`](requirements.txt): Python dependencies.
-- [`airflow-docker/`](airflow-docker/): Additional Airflow configuration files.
+```text
+.
+├── business_analytics/       SQL analyses grouped by business domain
+│   ├── 1. Customer Base/
+│   ├── 2. Products/
+│   ├── 3. Transactions/
+│   ├── 4. CRM/
+│   ├── 5. Combined or Segmentation/
+│   └── 6. Stretch Section/
+├── dags/                     Airflow pipeline definition
+├── data/
+│   └── raw/                  Source activity extract
+├── data modelling/           Modelled extract and star-schema diagram
+├── docs/                     Project documentation PDF
+├── plugins/                  Local PostgreSQL and Airflow Compose stack
+├── scripts/                  Python ETL and warehouse DDL
+├── airflow-docker/            Additional Airflow configuration
+├── config/                   Airflow configuration
+├── requirements.txt           Python dependencies
+└── README.md                 Project guide
+```
+
+Key files: [`scripts/customer360.py`](scripts/customer360.py) runs the ETL; [`scripts/Script-16.sql.sql`](scripts/Script-16.sql.sql) defines staging and warehouse tables; [`dags/customer360_dag.py`](dags/customer360_dag.py) orchestrates scheduled runs; and [`plugins/docker-compose.yaml`](plugins/docker-compose.yaml) starts the local services.
 
 ## Configuration and Data Safety
 

@@ -1,21 +1,20 @@
-WITH anchor_date AS (
-    SELECT MAX(event_timestamp) AS max_timestamp FROM dwh.fct_activity
+WITH ref AS (
+    SELECT MAX(full_date) AS ref_date FROM dwh.dim_date
 ),
-customer_recency AS (
-    SELECT
-        c.customer_key,
-        MAX(f.event_timestamp) AS last_activity_time
-    FROM dwh.dim_customer c
-    LEFT JOIN dwh.fct_activity f ON c.customer_key = f.customer_key
-    GROUP BY c.customer_key
+last_activity AS (
+    SELECT customer_key, MAX(event_date) AS last_activity_date
+    FROM dwh.fct_activity
+    WHERE event_date IS NOT NULL
+    GROUP BY customer_key
 )
 SELECT
     CASE
-        WHEN cr.last_activity_time >= (a.max_timestamp - INTERVAL '90 days') THEN 'Active (<= 90 days)'
-        ELSE 'Inactive / Dormant (> 90 days)'
-    END AS customer_status,
-    COUNT(cr.customer_key) AS customer_count,
-    ROUND(100.0 * COUNT(cr.customer_key) / SUM(COUNT(cr.customer_key)) OVER (), 2) AS share_pct
-FROM customer_recency cr
-CROSS JOIN anchor_date a
-GROUP BY 1;
+        WHEN la.last_activity_date >= ref.ref_date - INTERVAL '90 days'
+            THEN 'Active'
+        ELSE 'Not Active'
+    END AS status,
+    COUNT(*) AS customer_count
+FROM dwh.dim_customer c
+LEFT JOIN last_activity la ON la.customer_key = c.customer_key
+CROSS JOIN ref
+GROUP BY status;

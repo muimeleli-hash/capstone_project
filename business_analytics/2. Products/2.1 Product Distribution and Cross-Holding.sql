@@ -7,6 +7,9 @@ GROUP BY product_type
 ORDER BY customer_count DESC;
 
 -- Part B: Cross-holding count (Hold > 1 product)
+
+
+
 WITH client_product_depth AS (
     SELECT
         client_number,

@@ -1,28 +1,20 @@
-WITH monthly_active_customers AS (
+WITH monthly_activity AS (
     SELECT DISTINCT
-        DATE_TRUNC('month', f.event_timestamp)::DATE AS activity_month,
-        f.customer_key
-    FROM dwh.fct_activity f
-    WHERE f.amount > 0 OR f.event_key IS NOT NULL
-),
-retention_matrix AS (
-    SELECT
-        curr.activity_month AS current_month,
-        COUNT(DISTINCT curr.customer_key) AS active_in_month_n,
-        COUNT(DISTINCT nxt.customer_key) AS retained_in_month_n_plus_1
-    FROM monthly_active_customers curr
-    LEFT JOIN monthly_active_customers nxt
-        ON curr.customer_key = nxt.customer_key
-        AND nxt.activity_month = (curr.activity_month + INTERVAL '1 month')::DATE
-    GROUP BY curr.activity_month
+        customer_key,
+        DATE_TRUNC('month', event_date)::date AS activity_month
+    FROM dwh.fct_activity
+    WHERE event_date IS NOT NULL
 )
 SELECT
-    current_month,
-    active_in_month_n,
-    retained_in_month_n_plus_1,
+    a.activity_month AS month_n,
+    COUNT(DISTINCT a.customer_key) AS active_in_month_n,
+    COUNT(DISTINCT b.customer_key) AS retained_in_month_n_plus_1,
     ROUND(
-        100.0 * retained_in_month_n_plus_1 / NULLIF(active_in_month_n, 0),
-        2
-    ) AS mom_retention_rate_pct
-FROM retention_matrix
-ORDER BY current_month;
+        100.0 * COUNT(DISTINCT b.customer_key) / COUNT(DISTINCT a.customer_key), 2
+    ) AS retention_pct
+FROM monthly_activity a
+LEFT JOIN monthly_activity b
+    ON b.customer_key = a.customer_key
+   AND b.activity_month = a.activity_month + INTERVAL '1 month'
+GROUP BY a.activity_month
+ORDER BY a.activity_month;

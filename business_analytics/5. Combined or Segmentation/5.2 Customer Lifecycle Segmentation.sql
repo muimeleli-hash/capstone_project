@@ -1,25 +1,25 @@
-WITH max_ref AS (
-    SELECT MAX(event_timestamp) AS max_date FROM dwh.fct_activity
+WITH ref AS (
+    SELECT MAX(full_date) AS ref_date FROM dwh.dim_date
 ),
-customer_summary AS (
-    SELECT
-        c.customer_key,
-        c.signup_date,
-        MAX(f.event_timestamp) AS last_activity,
-        (SELECT max_date FROM max_ref) AS ref_date
-    FROM dwh.dim_customer c
-    LEFT JOIN dwh.fct_activity f ON c.customer_key = f.customer_key
-    GROUP BY c.customer_key, c.signup_date
+last_activity AS (
+    SELECT customer_key, MAX(event_date) AS last_activity_date
+    FROM dwh.fct_activity
+    WHERE event_date IS NOT NULL
+    GROUP BY customer_key
 )
 SELECT
     CASE
-        WHEN signup_date >= (ref_date - INTERVAL '90 days') THEN '1. New'
-        WHEN last_activity >= (ref_date - INTERVAL '60 days') THEN '2. Active'
-        WHEN last_activity >= (ref_date - INTERVAL '180 days') THEN '3. At Risk'
+        WHEN c.signup_date >= ref.ref_date - INTERVAL '90 days'
+            THEN '1. New'
+        WHEN la.last_activity_date >= ref.ref_date - INTERVAL '90 days'
+            THEN '2. Active'
+        WHEN la.last_activity_date >= ref.ref_date - INTERVAL '180 days'
+            THEN '3. At risk'
         ELSE '4. Dormant'
     END AS lifecycle_segment,
-    COUNT(*) AS customer_count,
-    ROUND(100.0 * COUNT(*) / SUM(COUNT(*)) OVER (), 2) AS customer_share_pct
-FROM customer_summary
-GROUP BY 1
-ORDER BY 1;
+    COUNT(*) AS customer_count
+FROM dwh.dim_customer c
+LEFT JOIN last_activity la ON la.customer_key = c.customer_key
+CROSS JOIN ref
+GROUP BY lifecycle_segment
+ORDER BY lifecycle_segment;

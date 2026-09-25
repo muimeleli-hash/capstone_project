@@ -1,12 +1,10 @@
 SELECT
-    c.channel,
-    COUNT(f.activity_key) AS transaction_count,
-    ROUND(100.0 * COUNT(f.activity_key) / SUM(COUNT(f.activity_key)) OVER (), 2) AS volume_share_pct,
+    ch.channel_name,
+    COUNT(*) AS txn_count,
     SUM(f.amount) AS total_value,
-    ROUND(100.0 * SUM(f.amount) / SUM(SUM(f.amount)) OVER (), 2) AS value_share_pct,
-    ROUND(AVG(f.amount), 2) AS avg_transaction_size
+    ROUND(AVG(f.amount), 2) AS avg_txn_value
 FROM dwh.fct_activity f
-JOIN dwh.dim_channel c ON f.channel_key = c.channel_key
-WHERE f.amount > 0
-GROUP BY c.channel
-ORDER BY transaction_count DESC;
+JOIN dwh.dim_channel ch ON ch.channel_key = f.channel_key
+WHERE f.transaction_type_key IS NOT NULL
+GROUP BY ch.channel_name
+ORDER BY total_value DESC;
