@@ -223,23 +223,3 @@ CREATE INDEX IF NOT EXISTS idx_dwh_activity_channel
 
 CREATE INDEX IF NOT EXISTS idx_dwh_activity_tx_type
     ON dwh.fct_activity(transaction_type_key);
-
--- ============================================================
--- 8. QUICK CHECK QUERIES
--- ============================================================
--- SELECT COUNT(*) FROM stg.stg_activity_extract;
--- SELECT COUNT(*) FROM stg.stg_dim_customer;
--- SELECT COUNT(*) FROM stg.stg_dim_account;
--- SELECT COUNT(*) FROM stg.stg_dim_event;
--- SELECT COUNT(*) FROM stg.stg_dim_channel;
--- SELECT COUNT(*) FROM stg.stg_dim_transaction_type;
--- SELECT COUNT(*) FROM stg.stg_dim_date;
--- SELECT COUNT(*) FROM stg.stg_fact_activity;
---
--- SELECT COUNT(*) FROM dwh.dim_customer;
--- SELECT COUNT(*) FROM dwh.dim_account;
--- SELECT COUNT(*) FROM dwh.dim_event;
--- SELECT COUNT(*) FROM dwh.dim_channel;
--- SELECT COUNT(*) FROM dwh.dim_transaction_type;
--- SELECT COUNT(*) FROM dwh.dim_date;
--- SELECT COUNT(*) FROM dwh.fct_activity;

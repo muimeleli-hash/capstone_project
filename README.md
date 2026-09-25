@@ -2,10 +2,10 @@
 
 An end-to-end customer activity pipeline built with Python, PostgreSQL, SQL, and Apache Airflow. It ingests a CSV extract, standardizes customer and activity data, and builds a dimensional warehouse for customer, product, transaction, and CRM analysis.
 
-[![SQL](https://img.shields.io/badge/SQL-PostgreSQL%20Dialect-336791?logo=postgresql&logoColor=white)](https://www.postgresql.org/docs/)
-[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![SQL](https://img.shields.io/badge/SQL-PostgreSQL%20Dialect-38BDF8?logo=postgresql&logoColor=white)](https://www.postgresql.org/docs/)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-F7C843?logo=python&logoColor=3776AB)](https://www.python.org/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-4169E1?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
-[![Apache Airflow](https://img.shields.io/badge/Apache%20Airflow-2.9.0-017CEE?logo=apacheairflow&logoColor=white)](https://airflow.apache.org/)
+[![Apache Airflow](https://img.shields.io/badge/Apache%20Airflow-2.9.0-20A6A6?logo=apacheairflow&logoColor=white)](https://airflow.apache.org/)
 
 **Project report:** [Customer 360 end-to-end data engineering documentation](docs/customer360-project-documentation.pdf)
 
@@ -121,3 +121,15 @@ The CSV extracts contain personal-data-shaped fields, including names, contact d
 ## Validation
 
 The repository does not currently include an automated test suite. Running `python scripts/customer360.py` performs the pipeline and prints warehouse row counts; you can also inspect the resulting dimensions and fact table directly in PostgreSQL.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE). See the license file for terms and conditions.
+
+## Author
+
+**Muimeleli Nesane**
+
+Phone: [+27 605542359](tel:+27605542359)
+
+Email: [muimelelinesane557@gmail.com](mailto:muimelelinesane557@gmail.com)
